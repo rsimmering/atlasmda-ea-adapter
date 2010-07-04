@@ -1,0 +1,20 @@
+#foreach($ass in ${type.getManyToOne()})
+
+    /**
+     * Get the ${ass.name} of the ${type.name}
+     * @return ${ass.name}
+     * @see ${ass.entity.name}
+     */
+    public ${ass.entity.name} get${util.capitalize(${ass.name})}() {
+        return ${ass.name};
+    }
+
+    /**
+     * Set the ${ass.name} of the ${type.name}
+     * @param ${ass.name} The ${ass.name}
+     * @see ${ass.entity.name}
+     */
+    public void set${util.capitalize(${ass.name})}(${ass.entity.name} ${ass.name}) {
+        this.${ass.name} = ${ass.name};
+    }
+#end

@@ -1,0 +1,7 @@
+package ${target.namespace};
+
+public #if(${type.isAbstractEntity()})abstract#end class ${type.name} extends ${type.name}Base {
+
+
+
+}

@@ -1,0 +1,13 @@
+<context>
+    <inputs>
+        <model file="src/test/resources/test.xml" adapter="org.atlas.model.adapter.ea.ModelAdapter"/>
+        <templates dir="src/test/resources/templates" />
+        <utility name="util" impl="org.atlas.utils.AtlasStringUtils"/>
+    </inputs>
+    <outputs>
+        <output name="generated.source.root" dir="target/testoutput/src/generated/java"/>
+        <output name="main.source.root" dir="target/testoutput/src/main/java"/>
+        <output name="generated.resource.root" dir="target/testoutput/src/generated/resources"/>
+        <output name="main.resource.root" dir="target/testoutput/src/main/resources"/>
+    </outputs>
+</context>

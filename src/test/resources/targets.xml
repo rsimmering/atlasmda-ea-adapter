@@ -1,0 +1,42 @@
+<targets>
+    <target name="entity.impl.base"
+            stereotype="entity"
+            template="entity.base.vm"
+            namespace="org.atlas.test.entity"
+            outputFile="${name}Base.java"
+            outputPath="${generated.source.root}/org/atlas/test/entity"
+            overwrite="true"/>
+
+    <target name="entity.impl"
+            stereotype="entity"
+            template="entity.vm"
+            namespace="org.atlas.test.entity"
+            outputFile="${name}.java"
+            outputPath="${main.source.root}/org/atlas/test/entity"
+            overwrite="false"/>
+
+    <target name="enum"
+            stereotype="enumeration"
+            template="enum.vm"
+            namespace="org.atlas.test.entity"
+            outputFile="${name}.java"
+            outputPath="${generated.source.root}/org/atlas/test/entity"
+            overwrite="true"/>
+
+    <target name="service"
+            stereotype="control"
+            template="service.vm"
+            namespace="org.atlas.test.service"
+            outputFile="${name}.java"
+            outputPath="${generated.source.root}/org/atlas/test/service"
+            overwrite="true"/>
+
+    <target name="view"
+            stereotype="boundary"
+            template="view.vm"
+            outputFile="${name}.java"
+            namespace="org.atlas.test.view"
+            outputPath="${generated.source.root}/org/atlas/test/view"
+            overwrite="true"/>
+
+</targets>

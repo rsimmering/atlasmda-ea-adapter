@@ -1,0 +1,10 @@
+package ${target.namespace};
+
+public enum ${type.name} {
+
+#foreach($literal in $type.literals)
+    ${literal.name}#if($velocityHasNext),
+#end
+#end
+
+}
