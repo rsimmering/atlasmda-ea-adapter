@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.atlas</groupId>
-    <artifactId>atlas-adapter-ea</artifactId>
+    <artifactId>atlas-ea-adapter</artifactId>
     <packaging>jar</packaging>
     <version>2.0-SNAPSHOT</version>
 
