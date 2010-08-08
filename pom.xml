@@ -11,25 +11,36 @@
     <version>2.0-SNAPSHOT</version>
 
     <distributionManagement>
-        <repository>
-          <id>releases</id>
-          <name>Releases</name>
-          <url>http://ppi3.vpsfarm.com/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>Snapshots</name>
-            <url>http://ppi3.vpsfarm.com/nexus/content/repositories/snapshots</url>
-          </snapshotRepository>
-    </distributionManagement>
+	<repository>
+	  <id>atlas-releases</id>
+	  <name>Releases</name>
+	  <url>http://www.atlas-mda.org/repo/content/repositories/releases</url>
+	</repository>
+	<snapshotRepository>
+	    <id>atlas-snapshots</id>
+	    <name>Snapshots</name>
+	    <url>http://www.atlas-mda.org/repo/content/repositories/snapshots</url>
+	  </snapshotRepository>
+    </distributionManagement>  
 
-    <repositories>
-        <repository>
-            <id>Atlas</id>
-            <name>Atlas Repository</name>
-            <url>http://ppi3.vpsfarm.com/nexus/content/repositories/atlas/</url>
-        </repository>
-    </repositories>
+   <repositories>
+	<repository>
+	    <releases>
+		<enabled>false</enabled>
+		<updatePolicy>always</updatePolicy>
+		<checksumPolicy>warn</checksumPolicy>
+	    </releases>
+	    <snapshots>
+		<enabled>true</enabled>
+		<updatePolicy>always</updatePolicy>
+		<checksumPolicy>fail</checksumPolicy>
+	    </snapshots>
+	    <id>snapshots</id>
+	    <name>Atlas Snapshots</name>
+	    <url>http://www.atlas-mda.org/repo/content/repositories/snapshots</url>
+	</repository>
+     </repositories>
+    
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
