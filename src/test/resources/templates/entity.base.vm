@@ -1,4 +1,4 @@
-package ${target.namespace};
+package ${target.getProperty("namespace")};
 
 #if($type.hasMany())
 import java.util.List;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 #if(${util.isBlank(${type.getGeneralization()})})
 public abstract class ${type.name}Base implements Serializable {
 #else
-public abstract class ${type.name}Base extends ${type.generalization.name} {
+public abstract class ${type.name}Base extends ${type.generalization} {
 #end
 #if(${util.isBlank(${type.getGeneralization()})})
     

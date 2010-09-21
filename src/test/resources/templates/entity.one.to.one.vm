@@ -5,9 +5,9 @@
      * Get the ${ass.name} of the ${type.name}
      * @return ${ass.name}
      * @see 
-     * @see ${ass.entity.name}
+     * @see ${ass.entity}
      */
-    public ${ass.entity.name} get${util.capitalize(${ass.name})}() {
+    public ${ass.entity} get${util.capitalize(${ass.name})}() {
         return ${ass.name};
     }
 
@@ -15,9 +15,9 @@
      * Set the ${ass.name} of the ${type.name}
      * @param ${ass.name} The ${ass.name} 
      * @see 
-     * @see ${ass.entity.name}
+     * @see ${ass.entity}
      */
-    public void set${util.capitalize(${ass.name})}(${ass.entity.name} ${ass.name}) {
+    public void set${util.capitalize(${ass.name})}(${ass.entity} ${ass.name}) {
         this.${ass.name} = ${ass.name};
     }
 #else
@@ -25,18 +25,18 @@
     /**
      * Get the ${ass.name} of the ${type.name}
      * @return ${ass.name}
-     * @see ${ass.entity.name}
+     * @see ${ass.entity}
      */
-    public ${ass.entity.name} get${util.capitalize(${ass.name})}() {
+    public ${ass.entity} get${util.capitalize(${ass.name})}() {
         return ${ass.name};
     }
 
     /**
      * Set the ${ass.name} of the ${type.name}
      * @param ${ass.name} The ${ass.name}
-     * @see ${ass.entity.name}
+     * @see ${ass.entity}
      */
-    public void set${util.capitalize(${ass.name})}(${ass.entity.name} ${ass.name}) {
+    public void set${util.capitalize(${ass.name})}(${ass.entity} ${ass.name}) {
         this.${ass.name} = ${ass.name};
     }
 #end

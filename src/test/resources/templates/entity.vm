@@ -1,5 +1,7 @@
-package ${target.namespace};
+package ${target.getProperty("namespace")};
 
+
+@Table(name="${util.addSpacerToCamelCaseUpper(${type.name}, "_")}")
 public #if(${type.isAbstractEntity()})abstract#end class ${type.name} extends ${type.name}Base {
 
 

@@ -1,13 +1,54 @@
 <context>
-    <inputs>
-        <model file="src/test/resources/test.xml" adapter="org.atlas.model.adapter.ea.ModelAdapter"/>
-        <templates dir="src/test/resources/templates" />
+    <properties>
+        <property name="generated.source.root" value="target/testoutput/src/generated/java/org/atlas/test"/>
+        <property name="main.source.root" value="target/testoutput/src/main/java/org/atlas/test"/>
+        <property name="test.resource.root" value="src/test/resources"/>
+        <property name="namespace" value="org.atlas.test"/>
+    </properties>
+    <models>
+        <model file="${test.resource.root}/test.xml" adapter="org.atlas.model.adapter.ea.ModelAdapter"/>
+    </models>
+    <primitives file="${test.resource.root}/primitives.xml"/>
+    <templates dir="${test.resource.root}/templates"/>
+    <utilities>
         <utility name="util" impl="org.atlas.utils.AtlasStringUtils"/>
-    </inputs>
-    <outputs>
-        <output name="generated.source.root" dir="target/testoutput/src/generated/java"/>
-        <output name="main.source.root" dir="target/testoutput/src/main/java"/>
-        <output name="generated.resource.root" dir="target/testoutput/src/generated/resources"/>
-        <output name="main.resource.root" dir="target/testoutput/src/main/resources"/>
-    </outputs>
+    </utilities>
+    <targets>
+        <target name="entity.impl.base"
+                stereotype="entity"
+                template="entity.base.vm"
+                outputFile="${name}Base.java"
+                outputPath="${generated.source.root}/entity"
+                overwrite="true">
+            <property name="namespace" value="${namespace}.entity"/>
+        </target>
+
+        <target name="entity.impl"
+                stereotype="entity"
+                template="entity.vm"
+                outputFile="${name}.java"
+                outputPath="${main.source.root}/entity"
+                overwrite="false"/>
+
+        <target name="enum"
+                stereotype="enumeration"
+                template="enum.vm"
+                outputFile="${name}.java"
+                outputPath="${generated.source.root}/entity"
+                overwrite="true"/>
+
+        <target name="service"
+                stereotype="control"
+                template="service.vm"
+                outputFile="${name}.java"
+                outputPath="${generated.source.root}/service"
+                overwrite="true"/>
+
+        <target name="view"
+                stereotype="boundary"
+                template="view.vm"
+                outputFile="${name}.java"
+                outputPath="${generated.source.root}/view"
+                overwrite="true"/>
+    </targets>
 </context>

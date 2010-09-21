@@ -1,4 +1,4 @@
-package ${target.namespace};
+package ${target.getProperty("namespace")};
 
 public enum ${type.name} {
 
