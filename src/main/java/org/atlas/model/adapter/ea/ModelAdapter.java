@@ -290,6 +290,9 @@ public class ModelAdapter implements Adapter {
         for (EaAttribute a : e.getAttributes()) {
             entity.addProperty(normalizeProperty(a));
         }
+        for (EaOperation eo : e.getOperations()) {
+            entity.addOperation(normalizeOperation(eo));
+        }
 
         model.addEntity(entity);
     }
