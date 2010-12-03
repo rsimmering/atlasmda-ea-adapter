@@ -249,6 +249,8 @@ public class ModelAdapter implements Adapter {
 
             sourceAssn.setOwner(true);
             targetAssn.setOwner(false);
+            sourceAssn.setName(c.getSourceRole());
+            targetAssn.setName(c.getTargetRole());
 
             if (targetIsMany) {
                 sourceAssn.setMultiplicity(Association.Multiplicity.OneToMany);
@@ -267,6 +269,8 @@ public class ModelAdapter implements Adapter {
 
             sourceAssn.setOwner(false);
             targetAssn.setOwner(true);
+            sourceAssn.setName(c.getTargetRole());
+            targetAssn.setName(c.getSourceRole());
 
             if (sourceIsMany) {
                 sourceAssn.setMultiplicity(Association.Multiplicity.OneToMany);
