@@ -1,0 +1,9 @@
+<control name="${type.name}">
+#foreach($o in ${type.operations})
+    <operation name="${o.name}" returnType="${o.returnType}" return-many="${o.isReturnMany()}">
+#foreach($p in ${o.parameters})
+        <parameter name="${p.name}" type="${p.type}" is-many="${p.isMany()}"/>
+#end
+    </operation>
+#end
+</control>

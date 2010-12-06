@@ -1,7 +1,6 @@
 <context>
     <properties>
-        <property name="generated.source.root" value="target/testoutput/src/generated/java/org/atlas/test"/>
-        <property name="main.source.root" value="target/testoutput/src/main/java/org/atlas/test"/>
+        <property name="generated.source.root" value="target/testoutput"/>
         <property name="test.resource.root" value="src/test/resources"/>
         <property name="namespace" value="org.atlas.test"/>
     </properties>
@@ -11,44 +10,35 @@
     <primitives file="${test.resource.root}/primitives.xml"/>
     <templates dir="${test.resource.root}/templates"/>
     <utilities>
-        <utility name="util" impl="org.atlas.utils.AtlasStringUtils"/>
+        <utility name="util" impl="org.atlas.engine.utility.NamingUtility"/>
     </utilities>
     <targets>
-        <target name="entity.impl.base"
+        <target name="entity"
                 stereotype="entity"
-                template="entity.base.vm"
-                outputFile="${name}Base.java"
+                template="entity.vm"
+                outputFile="${name}.xml"
                 outputPath="${generated.source.root}/entity"
                 overwrite="true">
             <property name="namespace" value="${namespace}.entity"/>
         </target>
 
-        <target name="entity.impl"
-                stereotype="entity"
-                template="entity.vm"
-                outputFile="${name}.java"
-                outputPath="${main.source.root}/entity"
-                overwrite="false"/>
-
         <target name="enum"
                 stereotype="enumeration"
                 template="enum.vm"
-                outputFile="${name}.java"
-                outputPath="${generated.source.root}/entity"
-                overwrite="true"/>
-
-        <target name="service"
+                outputFile="${name}.xml"
+                outputPath="${generated.source.root}/enum"
+                overwrite="false"/>
+        <target name="control"
                 stereotype="control"
-                template="service.vm"
-                outputFile="${name}.java"
-                outputPath="${generated.source.root}/service"
+                template="control.vm"
+                outputFile="${name}.xml"
+                outputPath="${generated.source.root}/control"
                 overwrite="true"/>
-
-        <target name="view"
+        <target name="boundary"
                 stereotype="boundary"
-                template="view.vm"
-                outputFile="${name}.java"
-                outputPath="${generated.source.root}/view"
+                template="boundary.vm"
+                outputFile="${name}.xml"
+                outputPath="${generated.source.root}/boundary"
                 overwrite="true"/>
     </targets>
 </context>

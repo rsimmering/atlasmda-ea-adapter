@@ -1,10 +1,5 @@
-package ${target.getProperty("namespace")};
-
-public enum ${type.name} {
-
-#foreach($literal in $type.literals)
-    ${literal.name}#if($velocityHasNext),
+<enumeration name="${type.name}">
+#foreach($l in ${type.literals})
+    <literal name="${l.name}"/>
 #end
-#end
-
-}
+</enumeration>

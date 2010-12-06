@@ -1,9 +1,24 @@
-package ${target.getProperty("namespace")};
-
-
-@Table(name="${util.addSpacerToCamelCaseUpper(${type.name}, "_")}")
-public #if(${type.isAbstractEntity()})abstract#end class ${type.name} extends ${type.name}Base {
-
-
-
-}
+<entity name="${type.name}" namespace="${target.getProperty("namespace")}" abstract="${type.isAbstractEntity()}" #if(! ${util.isBlank(${type.getGeneralization()})})generalization="${type.getGeneralization().getName()}"#end>
+#foreach($p in ${type.properties})
+    <property name="${p.name}" type="${p.type}"/>
+#end
+#foreach($a in ${type.getOneToMany()})
+    <one-to-many name="${a.name}" type="${a.entity.name}" owner="${a.isOwner()}"/>
+#end
+#foreach($a in ${type.getOneToOne()})
+    <one-to-one name="${a.name}" type="${a.entity.name}" owner="${a.isOwner()}"/>
+#end
+#foreach($a in ${type.getManyToMany()})
+    <many-to-many name="${a.name}" type="${a.entity.name}" owner="${a.isOwner()}"/>
+#end
+#foreach($a in ${type.getManyToOne()})
+    <many-to-one name="${a.name}" type="${a.entity.name}" owner="${a.isOwner()}"/>
+#end
+#foreach($o in ${type.operations})
+    <operation name="${o.name}" returnType="${o.returnType}" return-many="${o.isReturnMany()}">
+#foreach($p in ${o.parameters})
+        <parameter name="${p.name}" type="${p.type}" is-many="${p.isMany()}"/>
+#end
+    </operation>
+#end
+</entity>

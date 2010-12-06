@@ -1,0 +1,12 @@
+<boundary name="${type.name}">
+#foreach($p in ${type.properties})
+    <property name="${p.name}" type="${p.type}"/>
+#end
+#foreach($o in ${type.operations})
+    <operation name="${o.name}" returnType="${o.returnType}" return-many="${o.isReturnMany()}">
+#foreach($p in ${o.parameters})
+        <parameter name="${p.name}" type="${p.type}" is-many="${p.isMany()}"/>
+#end
+    </operation>
+#end
+</boundary>
