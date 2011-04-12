@@ -7,7 +7,7 @@
     <groupId>org.atlas</groupId>
     <artifactId>atlas-ea-adapter</artifactId>
     <packaging>jar</packaging>
-    <version>2.4-SNAPSHOT</version>
+    <version>2.4</version>
 
     <distributionManagement>
         <repository>
@@ -22,9 +22,9 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:http://atlas-mda.googlecode.com/svn/adapters/atlas-ea-adapter/trunk</connection>
-        <developerConnection>scm:svn:https://atlas-mda.googlecode.com/svn/adapters/atlas-ea-adapter/trunk</developerConnection>
-        <url>http://atlas-mda.googlecode.com/svn/adapters/atlas-ea-adapter/trunk</url>
+        <connection>scm:svn:http://atlas-mda.googlecode.com/svn/adapters/atlas-ea-adapter/releases/atlas-ea-adapter-2.4</connection>
+        <developerConnection>scm:svn:https://atlas-mda.googlecode.com/svn/adapters/atlas-ea-adapter/releases/atlas-ea-adapter-2.4</developerConnection>
+        <url>http://atlas-mda.googlecode.com/svn/adapters/atlas-ea-adapter/releases/atlas-ea-adapter-2.4</url>
     </scm>
 
     <repositories>
