@@ -1,3 +1,4 @@
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <name>Atlas Adapter for Enterprise Architect</name>
@@ -11,11 +12,11 @@
     <distributionManagement>
         <repository>
             <id>atlas-releases</id>
-            <url>http://www.atlas-mda.org/repo/content/repositories/releases</url>
+            <url>http://repo.atlas-mda.org/nexus/content/repositories/atlas-releases</url>
         </repository>
         <snapshotRepository>
             <id>atlas-snapshots</id>
-            <url>http://www.atlas-mda.org/repo/content/repositories/snapshots</url>
+            <url>http://repo.atlas-mda.org/nexus/content/repositories/atlas-snapshots/</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
@@ -28,19 +29,19 @@
 
     <repositories>
         <repository>
-            <releases>
-                <enabled>false</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </snapshots>
-            <id>snapshots</id>
+            <id>atlas-releases</id>
+            <name>Atlas Releases</name>
+            <url>http://repo.atlas-mda.org/nexus/content/repositories/atlas-releases</url>
+        </repository>
+        <repository>
+            <id>atlas-snapshots</id>
             <name>Atlas Snapshots</name>
-            <url>http://www.atlas-mda.org/repo/content/repositories/snapshots</url>
+            <url>http://repo.atlas-mda.org/nexus/content/repositories/atlas-snapshots</url>
+        </repository>
+        <repository>
+            <id>thirdparty</id>
+            <name>3rd Party</name>
+            <url>http://repo.atlas-mda.org/nexus/content/repositories/thirdparty</url>
         </repository>
     </repositories>
 
@@ -64,7 +65,7 @@
         <dependency>
             <groupId>org.atlas</groupId>
             <artifactId>atlas-engine</artifactId>
-            <version>2.1</version>
+            <version>2.3</version>
         </dependency>
     </dependencies>
 
